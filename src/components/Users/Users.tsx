@@ -5,7 +5,6 @@ import * as S from "./Users.styles";
 
 export const Users = () => {
   const query = useGetUsers();
-  console.log(query.data);
   return (
     <S.UsersContainer>
       {query.isLoading && (
@@ -14,7 +13,7 @@ export const Users = () => {
       {query.data && (
         <S.UsersGrid>
           {query.data.data.map((user) => (
-            <Card user={user} />
+            <Card key={user.name} user={user} />
           ))}
         </S.UsersGrid>
       )}

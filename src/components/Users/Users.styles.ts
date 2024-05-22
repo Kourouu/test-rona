@@ -6,6 +6,7 @@ export const UsersContainer = styled.div(() => ({
 
 export const UsersGrid = styled.div(() => ({
   display: "grid",
-  gridTemplateColumns: "repeat(auto-fit, 300px)",
+  gridTemplateColumns:
+    "repeat(auto-fit, minmax(250px, calc(100vw / 4 - (4rem))))",
   gap: "1rem",
 }));
