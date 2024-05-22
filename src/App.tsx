@@ -1,15 +1,17 @@
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { ThemeProvider } from "@emotion/react";
+import { theme } from "./theme/theme";
 
 import { Users } from "./components/Users/Users";
-
-import "./App.css";
 
 function App() {
   const queryClient = new QueryClient();
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Users />
+      <ThemeProvider theme={theme}>
+        <Users />
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }
